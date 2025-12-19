@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 1. Клонируем репозиторий
-      - uses: actions/checkout@3
+      - uses: actions/checkout@v3
 
       # 2. Устанавливаем JDK
       - name: Set up JDK 21
