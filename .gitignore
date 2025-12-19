@@ -1,6 +1,15 @@
 HELP.md
 .gradle
-build/
+!/build/generated-src/
+
+/build/classes
+/build/generated
+/build/kotlin
+/build/libs
+/build/reports
+/build/resources
+/build/tmp
+/build/resolvedMainClassName
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
