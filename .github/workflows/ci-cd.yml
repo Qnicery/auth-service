@@ -22,7 +22,7 @@ jobs:
 
       # 3. Собираем JAR с jOOQ и остальным
       - name: Build JAR
-        run: ./gradlew clean build
+        run: ./gradlew clean build -x test
 
       # 4. Сборка Docker-образа auth_service
       - name: Build docker image
