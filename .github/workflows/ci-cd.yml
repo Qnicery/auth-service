@@ -43,8 +43,11 @@ jobs:
           done
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+      - name: Initialize DB
+        run: |
+          PGPASSWORD=503812 psql -h localhost -p 5433 -U postgres -d online-shop -f db/init.sql
       - name: Build 
-        run: ./gradlew clean build -x test -x generateJooq
+        run: ./gradlew clean build -x test
 
       - name: Build Docker image
         run: |
