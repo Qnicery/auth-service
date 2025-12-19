@@ -45,7 +45,7 @@ jobs:
         run: chmod +x gradlew
       - name: Initialize DB
         run: |
-          PGPASSWORD=503812 psql -h localhost -p 5433 -U postgres -d online-shop -f db/init.sql
+          PGPASSWORD=503812 psql -h localhost -p 5433 -U postgres -d online-shop -f init.sql
       - name: Build 
         run: ./gradlew clean build -x test
 
