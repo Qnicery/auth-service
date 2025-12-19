@@ -1,0 +1,33 @@
+# .github/workflows/ci-cd.yml
+name: CI/CD for Auth Service
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-and-push-to-yc:
+    runs-on: ubuntu-latest
+    steps:
+      # Клонируем репозиторий
+      - uses: actions/checkout@v3
+
+      # Сборка Docker-образа
+      - name: Build Docker image
+        run: |
+          docker build . --file Dockerfile --tag cr.yandex/${{ secrets.YC_REGISTRY_ID }}/auth_service:latest
+
+      # Логин в Yandex Container Registry
+      - name: Login to YC Registry
+        uses: docker/login-action@v3
+        with:
+          registry: cr.yandex
+          username: json_key
+          password: ${{ secrets.YC_KEYS }}
+
+      # Пуш образа в YC Registry
+      - name: Push Docker image to YC Registry
+        run: |
+          docker push cr.yandex/${{ secrets.YC_REGISTRY_ID }}/auth_service:latest
