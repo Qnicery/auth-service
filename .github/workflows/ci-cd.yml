@@ -21,6 +21,9 @@ jobs:
           java-version: 21
 
       # 3. Собираем JAR с jOOQ и остальным
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Build JAR
         run: ./gradlew clean build -x test
 
