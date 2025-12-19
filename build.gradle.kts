@@ -63,8 +63,8 @@ jooq {
             jooqConfiguration.apply {
                 jdbc.apply {
                     driver = "org.postgresql.Driver"
-                    url = "jdbc:postgresql://localhost:5433/online-shop"
-                    user = "postgres"
+                    url = "jdbc:postgresql://aws-1-eu-west-1.pooler.supabase.com:5432/postgres"
+                    user = "postgres.yvahfvooiaegoukpbhly"
                     password = "503812"
                 }
                 generator.apply {
@@ -72,7 +72,7 @@ jooq {
                     strategy.name = "org.jooq.codegen.DefaultGeneratorStrategy"
                     database.apply {
                         name = "org.jooq.meta.postgres.PostgresDatabase"
-                        inputSchema = "auth"
+                        inputSchema = "auths"
                         includes = ".*"
                         excludes = "databasechangelog|databasechangeloglock"
                     }

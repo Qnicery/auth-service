@@ -26,9 +26,9 @@ public class DefaultCatalog extends CatalogImpl {
     public static final DefaultCatalog DEFAULT_CATALOG = new DefaultCatalog();
 
     /**
-     * The schema <code>auth</code>.
+     * The schema <code>auths</code>.
      */
-    public final Auth AUTH = Auth.AUTH;
+    public final Auths AUTHS = Auths.AUTHS;
 
     /**
      * No further instances allowed
@@ -40,7 +40,7 @@ public class DefaultCatalog extends CatalogImpl {
     @Override
     public final List<Schema> getSchemas() {
         return Arrays.asList(
-            Auth.AUTH
+            Auths.AUTHS
         );
     }
 

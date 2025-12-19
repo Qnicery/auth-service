@@ -4,12 +4,14 @@ spring:
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/db.changelog-master.xml
-    liquibase-schema: auth
+    liquibase-schema: auths
   datasource:
-    url: jdbc:postgresql://localhost:5433/online-shop
-    username: postgres
+    url: jdbc:postgresql://aws-1-eu-west-1.pooler.supabase.com:5432/postgres
+    username: postgres.yvahfvooiaegoukpbhly
     password: 503812
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
   jpa:
     hibernate:
       ddl-auto: validate
@@ -17,6 +19,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: auths
 
 server:
   port: 9091

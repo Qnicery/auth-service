@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 
-import org.example.auth.jooq.Auth;
+import org.example.auth.jooq.Auths;
 import org.example.auth.jooq.Keys;
 import org.example.auth.jooq.tables.records.UsersRecord;
 import org.jooq.Field;
@@ -40,7 +40,7 @@ public class Users extends TableImpl<UsersRecord> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * The reference instance of <code>auth.users</code>
+     * The reference instance of <code>auths.users</code>
      */
     public static final Users USERS = new Users();
 
@@ -53,32 +53,32 @@ public class Users extends TableImpl<UsersRecord> {
     }
 
     /**
-     * The column <code>auth.users.id</code>.
+     * The column <code>auths.users.id</code>.
      */
     public final TableField<UsersRecord, Long> ID = createField(DSL.name("id"), SQLDataType.BIGINT.nullable(false).identity(true), this, "");
 
     /**
-     * The column <code>auth.users.username</code>.
+     * The column <code>auths.users.username</code>.
      */
     public final TableField<UsersRecord, String> USERNAME = createField(DSL.name("username"), SQLDataType.VARCHAR(50).nullable(false), this, "");
 
     /**
-     * The column <code>auth.users.password</code>.
+     * The column <code>auths.users.password</code>.
      */
     public final TableField<UsersRecord, String> PASSWORD = createField(DSL.name("password"), SQLDataType.VARCHAR(255).nullable(false), this, "");
 
     /**
-     * The column <code>auth.users.email</code>.
+     * The column <code>auths.users.email</code>.
      */
     public final TableField<UsersRecord, String> EMAIL = createField(DSL.name("email"), SQLDataType.VARCHAR(100).nullable(false), this, "");
 
     /**
-     * The column <code>auth.users.created_at</code>.
+     * The column <code>auths.users.created_at</code>.
      */
     public final TableField<UsersRecord, LocalDateTime> CREATED_AT = createField(DSL.name("created_at"), SQLDataType.LOCALDATETIME(6).nullable(false).defaultValue(DSL.field(DSL.raw("now()"), SQLDataType.LOCALDATETIME)), this, "");
 
     /**
-     * The column <code>auth.users.updated_at</code>.
+     * The column <code>auths.users.updated_at</code>.
      */
     public final TableField<UsersRecord, LocalDateTime> UPDATED_AT = createField(DSL.name("updated_at"), SQLDataType.LOCALDATETIME(6).nullable(false).defaultValue(DSL.field(DSL.raw("now()"), SQLDataType.LOCALDATETIME)), this, "");
 
@@ -91,21 +91,21 @@ public class Users extends TableImpl<UsersRecord> {
     }
 
     /**
-     * Create an aliased <code>auth.users</code> table reference
+     * Create an aliased <code>auths.users</code> table reference
      */
     public Users(String alias) {
         this(DSL.name(alias), USERS);
     }
 
     /**
-     * Create an aliased <code>auth.users</code> table reference
+     * Create an aliased <code>auths.users</code> table reference
      */
     public Users(Name alias) {
         this(alias, USERS);
     }
 
     /**
-     * Create a <code>auth.users</code> table reference
+     * Create a <code>auths.users</code> table reference
      */
     public Users() {
         this(DSL.name("users"), null);
@@ -117,7 +117,7 @@ public class Users extends TableImpl<UsersRecord> {
 
     @Override
     public Schema getSchema() {
-        return aliased() ? null : Auth.AUTH;
+        return aliased() ? null : Auths.AUTHS;
     }
 
     @Override

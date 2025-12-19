@@ -41,11 +41,14 @@ jobs:
             pg_isready -h localhost -p 5433 -U postgres && break
             sleep 5
           done
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+
       - name: Initialize DB
         run: |
           PGPASSWORD=503812 psql -h localhost -p 5433 -U postgres -d online-shop -f init.sql
+
       - name: Build 
         run: ./gradlew clean build -x test
 
@@ -60,6 +63,30 @@ jobs:
           username: json_key
           password: ${{ secrets.YC_KEYS }}
 
-      - name: Push tag to YC Registry
+      - name: Push to YC Registry
         run: |
           docker push cr.yandex/${{ secrets.YC_REGISTRY_ID }}/auth_service:latest
+
+  deploy:
+    name: Deploy to Serverless Container
+    runs-on: ubuntu-latest
+    needs: [build-and-push-to-yc]  
+    steps:
+      - name: Deploy serverless container
+        uses: yc-actions/yc-sls-container-deploy@v4  
+        with:
+          yc-sa-json-credentials: ${{ secrets.YC_KEYS }}
+          container-name: ${{ secrets.YC_CONTAINER_NAME }}
+          folder-id: ${{ secrets.YC_FOLDER_ID }}
+          revision-image-url: cr.yandex/${{ secrets.YC_REGISTRY_ID }}/auth_service:latest
+          revision-service-account-id: ${{ secrets.YC_SA_ID }}
+          revision-cores: 1
+          revision-memory: 512Mb  
+          revision-core-fraction: 100
+          revision-concurrency: 4  
+          revision-invoker: allUsers  
+          revision-env: |
+            SPRING_DATASOURCE_URL=${{ secrets.SPRING_DATASOURCE_URL }}
+            SPRING_DATASOURCE_USERNAME=${{ secrets.SPRING_DATASOURCE_USERNAME }}
+            SPRING_DATASOURCE_PASSWORD=${{ secrets.SPRING_DATASOURCE_PASSWORD }}
+            # Добавь другие env, если нужны (например, SERVER_PORT не обязателен, если в yml fallback)

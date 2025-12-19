@@ -52,7 +52,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Getter for <code>auth.users.id</code>.
+     * Getter for <code>auths.users.id</code>.
      */
     @Override
     public Long getId() {
@@ -60,7 +60,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Setter for <code>auth.users.id</code>.
+     * Setter for <code>auths.users.id</code>.
      */
     @Override
     public void setId(Long id) {
@@ -68,7 +68,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Getter for <code>auth.users.username</code>.
+     * Getter for <code>auths.users.username</code>.
      */
     @Override
     public String getUsername() {
@@ -76,7 +76,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Setter for <code>auth.users.username</code>.
+     * Setter for <code>auths.users.username</code>.
      */
     @Override
     public void setUsername(String username) {
@@ -84,7 +84,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Getter for <code>auth.users.password</code>.
+     * Getter for <code>auths.users.password</code>.
      */
     @Override
     public String getPassword() {
@@ -92,7 +92,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Setter for <code>auth.users.password</code>.
+     * Setter for <code>auths.users.password</code>.
      */
     @Override
     public void setPassword(String password) {
@@ -100,7 +100,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Getter for <code>auth.users.email</code>.
+     * Getter for <code>auths.users.email</code>.
      */
     @Override
     public String getEmail() {
@@ -108,7 +108,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Setter for <code>auth.users.email</code>.
+     * Setter for <code>auths.users.email</code>.
      */
     @Override
     public void setEmail(String email) {
@@ -116,7 +116,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Getter for <code>auth.users.created_at</code>.
+     * Getter for <code>auths.users.created_at</code>.
      */
     @Override
     public LocalDateTime getCreatedAt() {
@@ -124,7 +124,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Setter for <code>auth.users.created_at</code>.
+     * Setter for <code>auths.users.created_at</code>.
      */
     @Override
     public void setCreatedAt(LocalDateTime createdAt) {
@@ -132,7 +132,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Getter for <code>auth.users.updated_at</code>.
+     * Getter for <code>auths.users.updated_at</code>.
      */
     @Override
     public LocalDateTime getUpdatedAt() {
@@ -140,7 +140,7 @@ public class Users implements IUsers {
     }
 
     /**
-     * Setter for <code>auth.users.updated_at</code>.
+     * Setter for <code>auths.users.updated_at</code>.
      */
     @Override
     public void setUpdatedAt(LocalDateTime updatedAt) {

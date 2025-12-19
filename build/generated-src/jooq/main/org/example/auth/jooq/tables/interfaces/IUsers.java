@@ -15,62 +15,62 @@ import java.time.LocalDateTime;
 public interface IUsers extends Serializable {
 
     /**
-     * Setter for <code>auth.users.id</code>.
+     * Setter for <code>auths.users.id</code>.
      */
     public void setId(Long value);
 
     /**
-     * Getter for <code>auth.users.id</code>.
+     * Getter for <code>auths.users.id</code>.
      */
     public Long getId();
 
     /**
-     * Setter for <code>auth.users.username</code>.
+     * Setter for <code>auths.users.username</code>.
      */
     public void setUsername(String value);
 
     /**
-     * Getter for <code>auth.users.username</code>.
+     * Getter for <code>auths.users.username</code>.
      */
     public String getUsername();
 
     /**
-     * Setter for <code>auth.users.password</code>.
+     * Setter for <code>auths.users.password</code>.
      */
     public void setPassword(String value);
 
     /**
-     * Getter for <code>auth.users.password</code>.
+     * Getter for <code>auths.users.password</code>.
      */
     public String getPassword();
 
     /**
-     * Setter for <code>auth.users.email</code>.
+     * Setter for <code>auths.users.email</code>.
      */
     public void setEmail(String value);
 
     /**
-     * Getter for <code>auth.users.email</code>.
+     * Getter for <code>auths.users.email</code>.
      */
     public String getEmail();
 
     /**
-     * Setter for <code>auth.users.created_at</code>.
+     * Setter for <code>auths.users.created_at</code>.
      */
     public void setCreatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>auth.users.created_at</code>.
+     * Getter for <code>auths.users.created_at</code>.
      */
     public LocalDateTime getCreatedAt();
 
     /**
-     * Setter for <code>auth.users.updated_at</code>.
+     * Setter for <code>auths.users.updated_at</code>.
      */
     public void setUpdatedAt(LocalDateTime value);
 
     /**
-     * Getter for <code>auth.users.updated_at</code>.
+     * Getter for <code>auths.users.updated_at</code>.
      */
     public LocalDateTime getUpdatedAt();
 

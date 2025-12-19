@@ -8,13 +8,13 @@ import org.example.auth.jooq.tables.Users;
 
 
 /**
- * Convenience access to all tables in auth.
+ * Convenience access to all tables in auths.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
 
     /**
-     * The table <code>auth.users</code>.
+     * The table <code>auths.users</code>.
      */
     public static final Users USERS = Users.USERS;
 }
