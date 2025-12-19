@@ -43,8 +43,8 @@ jobs:
           done
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Build and generate jOOQ
-        run: ./gradlew clean build -x test
+      - name: Build 
+        run: ./gradlew clean build -x test -x generateJooq
 
       - name: Build Docker image
         run: |
