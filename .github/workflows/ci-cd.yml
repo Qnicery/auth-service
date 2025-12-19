@@ -25,7 +25,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build JAR
-        run: ./gradlew clean build -x test
+        run: ./gradlew clean build -x test -x generateJooq
 
       # 4. Сборка Docker-образа auth_service
       - name: Build docker image
